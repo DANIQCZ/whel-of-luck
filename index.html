@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kolo štěstí</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <div class="left">
+      <canvas id="wheel" width="600" height="600"></canvas>
+      <button id="spinBtn">Roztočit (Ctrl+Enter)</button>
+    </div>
+    <div class="right">
+      <div class="panel">
+        <div class="panel-header">Entries</div>
+        <textarea id="entries" placeholder="Jedno jméno na řádek"></textarea>
+        <div class="row">
+          <label for="forced">100% drop (jméno):</label>
+          <input id="forced" type="text" placeholder="Jméno, které má padnout" />
+          <button id="clearForced" class="secondary">Zrušit</button>
+        </div>
+        <div class="row small">
+          <button id="shuffle">Zamíchat</button>
+          <button id="sort">Seřadit</button>
+          <button id="addImage" class="secondary" disabled>Přidat obrázek (brzy)</button>
+          <label class="checkbox"><input id="advanced" type="checkbox" /> Pokročilé</label>
+        </div>
+      </div>
+      <div class="panel results">
+        <div class="panel-header">Results</div>
+        <ol id="results"></ol>
+      </div>
+      <div class="version">v0.1</div>
+    </div>
+  </div>
+
+  <script src="/wheel.js"></script>
+</body>
+</html>
