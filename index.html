@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kolo štěstí s jistým výhercem</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="left">
+        <div class="wheel-wrap">
+          <canvas id="wheel" width="560" height="560" aria-label="Kolo štěstí"></canvas>
+          <div class="overlay-hint">Klikni pro spin<br/><span>nebo stiskni Ctrl+Enter</span></div>
+          <div class="pointer" aria-hidden="true"></div>
+        </div>
+        <div class="controls">
+          <button id="btnSpin" class="primary">SPIN</button>
+          <label class="cb"><input type="checkbox" id="soundToggle" checked /> Zvuk</label>
+        </div>
+      </div>
+      <div class="right">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Položky (<span id="entryCount">0</span>)</h2>
+            <div class="btn-row">
+              <button id="btnShuffle">Zamíchat</button>
+              <button id="btnSort">Seřadit</button>
+              <button id="btnClear">Vymazat</button>
+            </div>
+          </div>
+          <textarea id="entries" placeholder="Každé jméno na nový řádek"></textarea>
+
+          <div class="guarantee">
+            <label for="guaranteed">Jistý výherce (100% drop)</label>
+            <input id="guaranteed" type="text" placeholder="Zadej jméno" />
+            <label class="cb"><input type="checkbox" id="autoAdd" checked /> Automaticky přidat pokud chybí</label>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Výsledky</h2>
+            <div class="btn-row">
+              <button id="btnClearResults">Smazat výsledky</button>
+            </div>
+          </div>
+          <ol id="results"></ol>
+        </div>
+
+        <div class="meta">Verze 1.0 • Inspirace: Wheel of Names</div>
+      </div>
+    </div>
+
+    <audio id="tickSound" preload="auto">
+      <source src="data:audio/wav;base64,UklGRkQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YQwAAAAA//////////8AAAAAAP//////////AAAAAAD//////////w==" type="audio/wav" />
+    </audio>
+
+    <script src="app.js"></script>
+  </body>
+</html>
